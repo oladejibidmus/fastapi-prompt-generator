@@ -1,0 +1,42 @@
+openapi: 3.0.1
+info:
+  title: Premium Prompt Pack API
+  version: '1.0.0'
+paths:
+  /generate-prompt-pack:
+    post:
+      operationId: generatePromptPack
+      summary: Generate a premium AI prompt pack
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                quantity:
+                  type: integer
+                  enum: [500, 750, 1000]
+                category:
+                  type: string
+                style:
+                  type: string
+                tone:
+                  type: string
+                format:
+                  type: string
+                  enum: [markdown, csv, json]
+      responses:
+        '200':
+          description: List of premium prompts
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  format:
+                    type: string
+                  prompts:
+                    type: array
+                    items:
+                      type: string
