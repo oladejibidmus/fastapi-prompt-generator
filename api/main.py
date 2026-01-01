@@ -28,4 +28,4 @@ async def generate_prompt_pack(request: PromptRequest):
 
 @app.get("/")
 def read_root():
-    return {{"message": "Prompt Generator API is live"}}
+    return {"message": "Prompt Generator API is live"}
