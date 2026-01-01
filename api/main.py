@@ -12,7 +12,7 @@ class PromptRequest(BaseModel):
 
 def generate_premium_prompts(quantity, category, style, tone):
     return [
-        f"[{category.upper()}] ({style}, {tone}) Prompt #{i+1}: Write something unique about a future world where {i+1} is the key element."
+        f"[{category.upper()}] ({style}, {tone}) Prompt #{{i+1}}: Write something unique about a future world where {{i+1}} is the key element."
         for i in range(quantity)
     ]
 
@@ -28,4 +28,4 @@ async def generate_prompt_pack(request: PromptRequest):
 
 @app.get("/")
 def read_root():
-    return {"message": "Prompt Generator API is live"}
+    return {{"message": "Prompt Generator API is live"}}
