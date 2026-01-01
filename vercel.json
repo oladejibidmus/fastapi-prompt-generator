@@ -1,11 +1,9 @@
 {
-  "routes": [
+  "cleanUrls": true,
+  "rewrites": [
     {
-      "handle": "filesystem"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/api/main"
+      "source": "/.well-known/:file",
+      "destination": "/public/.well-known/:file"
     }
   ]
 }
