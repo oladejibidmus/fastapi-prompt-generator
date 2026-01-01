@@ -1,15 +1,10 @@
 {
-  "builds": [
+  "public": true,
+  "cleanUrls": true,
+  "rewrites": [
     {
-      "src": "main.py",
-      "use": "@vercel/python",
-      "config": { "runtime": "python3.9" }
-    }
-  ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "main.py"
+      "source": "/.well-known/:file",
+      "destination": "/public/.well-known/:file"
     }
   ]
 }
