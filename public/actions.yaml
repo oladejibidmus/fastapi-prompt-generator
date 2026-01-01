@@ -1,7 +1,7 @@
 openapi: 3.1.1
 info:
   title: Premium Prompt Pack API
-  version: '1.0.0'
+  version: 1.0.0
 servers:
   - url: https://fastapi-prompt-generator.vercel.app
 paths:
@@ -18,7 +18,10 @@ paths:
               properties:
                 quantity:
                   type: integer
-                  enum: [500, 750, 1000]
+                  enum:
+                    - 500
+                    - 750
+                    - 1000
                 category:
                   type: string
                 style:
@@ -27,9 +30,12 @@ paths:
                   type: string
                 format:
                   type: string
-                  enum: [markdown, csv, json]
+                  enum:
+                    - markdown
+                    - csv
+                    - json
       responses:
-        '200':
+        "200":
           description: List of premium prompts
           content:
             application/json:
